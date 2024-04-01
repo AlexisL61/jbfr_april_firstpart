@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:jbfr_april_fp/models/news/news.dart';
 import 'package:jbfr_april_fp/services/appwrite/appwrite_storage_service.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class NewsDialog extends StatefulWidget {
@@ -35,6 +34,7 @@ class _NewsDialogState extends State<NewsDialog> {
                       : CircularProgressIndicator();
                 },
               ),
+              SizedBox(height: 16),
               MarkdownBody(
                 data: widget.news.description,
                 onTapLink: (text, href, title) {

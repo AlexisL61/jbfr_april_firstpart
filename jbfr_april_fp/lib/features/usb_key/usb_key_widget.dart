@@ -75,8 +75,8 @@ class _UsbKeyWidgetState extends State<UsbKeyWidget> {
 
   Widget _buildFiles() {
     return GridView.count(
-      crossAxisCount: (MediaQuery.of(context).size.width-220) ~/ 350,
-      childAspectRatio: 1,
+      crossAxisCount: ((MediaQuery.of(context).size.width-300) ~/ 350)+1,
+      childAspectRatio: 0.75,
       children: List.generate(UserService().player!.gameFolders[selectedFolder].files.length,
           (index) => FileWidget(file: UserService().player!.gameFolders[selectedFolder].files[index])),
     );

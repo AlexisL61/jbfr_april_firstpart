@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jbfr_april_fp/dialogs/unlock_dialog/unlock_dialog.dart';
 import 'package:jbfr_april_fp/features/news/components/news_widget.dart';
-import 'package:jbfr_april_fp/features/usb_key/components/file_widget.dart';
-import 'package:jbfr_april_fp/features/usb_key/usb_key_controller.dart';
 import 'package:jbfr_april_fp/models/news/news_group.dart';
 import 'package:jbfr_april_fp/services/user_service.dart';
 
@@ -60,8 +57,8 @@ class _NewsListWidgetState extends State<NewsListWidget> {
 
   Widget _buildFiles() {
     return GridView.count(
-      crossAxisCount: (MediaQuery.of(context).size.width - 220) ~/ 450,
-      childAspectRatio: 1,
+      crossAxisCount: ((MediaQuery.of(context).size.width - 300) ~/ 450)+1,
+      childAspectRatio: 0.75,
       children: List.generate(UserService().news[selectedNewsList].news.length,
           (index) => NewsWidget(news: UserService().news[selectedNewsList].news[index])),
     );

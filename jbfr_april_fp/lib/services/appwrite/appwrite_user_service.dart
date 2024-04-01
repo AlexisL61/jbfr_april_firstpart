@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:html';
 
 import 'package:appwrite/appwrite.dart';
 import 'package:appwrite/enums.dart';
@@ -37,7 +36,8 @@ class AppWriteUserService {
 
   void login() async {
     Account account = Account(client);
-    account.createOAuth2Session(provider: OAuthProvider.discord, success: 'http://localhost:41391/authenticate.html');
+    account.createOAuth2Session(
+        provider: OAuthProvider.discord, success: 'https://jbfrstory.alexisl.fr/authenticate.html');
   }
 
   Future<User> getUser() async {

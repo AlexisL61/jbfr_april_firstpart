@@ -1,5 +1,4 @@
 import 'package:appwrite/appwrite.dart';
-import 'package:appwrite/models.dart';
 import 'package:flutter/foundation.dart';
 import 'package:jbfr_april_fp/services/appwrite/appwrite_user_service.dart';
 

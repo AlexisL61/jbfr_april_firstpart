@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:jbfr_april_fp/features/news/components/news_widget.dart';
 import 'package:jbfr_april_fp/features/news/news_list_widget.dart';
 import 'package:jbfr_april_fp/features/usb_key/usb_key_widget.dart';
 

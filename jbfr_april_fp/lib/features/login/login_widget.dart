@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:jbfr_april_fp/features/home/home_widget.dart';
 import 'package:jbfr_april_fp/features/login/components/login_information_column.dart';
 import 'package:jbfr_april_fp/features/login/login_controller.dart';
 import 'package:jbfr_april_fp/features/login/login_model.dart';
@@ -83,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
         text: 'Hello ${UserService().player!.name}, vous êtes connecté à Discord !',
         buttonText: "Continuer",
         onPressed: () {
-          Navigator.popAndPushNamed(context, '/');
+          Navigator.popAndPushNamed(context, HomePage.route);
         });
   }
 }

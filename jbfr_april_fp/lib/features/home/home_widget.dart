@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:jbfr_april_fp/features/home/home_controller.dart';
 import 'package:jbfr_april_fp/features/home/home_model.dart';
 
 class HomePage extends StatefulWidget {
-  static const String route = '/';
+  static const String route = '/route';
 
   const HomePage({super.key});
 
@@ -12,6 +13,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int selectedPage = 0;
+
+  @override
+  void initState() {
+    HomeController().retrieveData().then((value) => setState(() {
+        }));
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

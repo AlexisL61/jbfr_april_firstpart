@@ -26,7 +26,6 @@ class _NewsWidgetState extends State<NewsWidget> {
                 await showDialog(context: context, builder: (context) => NewsDialog(news: widget.news));
               },
               child: Container(
-                height: 300,
                 color: Theme.of(context).colorScheme.shadow.withOpacity(0.5),
                 child: Padding(
                     padding: const EdgeInsets.all(16.0),
@@ -36,19 +35,20 @@ class _NewsWidgetState extends State<NewsWidget> {
                           width: 400,
                           height: 200,
                           child: FutureBuilder(
-                            future: AppWriteStorageService().getFilePreview(
+                            future: AppWriteStorageService().getFileView(
                               widget.news.image,
                             ), //works for both public file and private file, for private files you need to be logged in
                             builder: (context, snapshot) {
                               return snapshot.hasData && snapshot.data != null
                                   ? Image.memory(
-                                      snapshot.data,
+                                      snapshot.data!,
                                     )
                                   : CircularProgressIndicator();
                             },
                           ),
                         ),
-                        Column(mainAxisAlignment: MainAxisAlignment.center, children: [Text(widget.news.name, style: Theme.of(context).textTheme.headlineMedium)]),
+                        SizedBox(height: 16),
+                        Column(mainAxisAlignment: MainAxisAlignment.center, children: [Text(widget.news.name, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center,)]),
                       ],
                     )),
               ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jbfr_april_fp/dialogs/unlock_dialog/unlock_dialog_controller.dart';
-import 'package:jbfr_april_fp/services/appwrite/appwrite_function_service.dart';
 
 class UnlockDialog extends StatefulWidget {
   final String folderName;
